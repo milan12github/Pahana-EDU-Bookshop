@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.DAO.BookDAOImpl" %>
+<%@ page import="com.entity.BookDtls" %>
+<%@ page import="com.DB.DBConnect" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +21,7 @@
 		  <thead class="bg-primary text-white">
 		    <tr>
 		      <th scope="col">ID</th>
+		      <th scope="col">Image</th>
 		      <th scope="col">Book Name</th>
 		      <th scope="col">Author</th>
 		      <th scope="col">Price</th>
@@ -25,13 +31,21 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
+		  
+		<%
+    	BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
+    	List<BookDtls> list = dao.getAllBooks();
+    	for (BookDtls b : list) 
+    	{%>
+    	
+    		 <tr>
+		      <th><%=b.getBookId() %></th>
+		      <td><img src="../book/<%=b.getPhotoName()%>" style="width: 80px; height:80px;"></td>
+		      <td><%=b.getBookname() %></td>
+		      <td><%=b.getAuthor() %></td>
+		      <td><%=b.getPrice() %></td>
+		      <td><%=b.getBookCategory() %></td>
+		      <td><%=b.getStatus() %></td>
 
 				<td>
 					<a href="#" class="btn btn-sm btn-primary">Edit</a>
@@ -40,37 +54,15 @@
 				</td>
 				
 		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>@fat</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		      
-		      <td>
-					<a href="#" class="btn btn-sm btn-primary">Edit</a>
-					<a href="#" class="btn btn-sm btn-danger">Delete</a>
-				
-				</td>
-				
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      <td>@twitter</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		      
-		      <td>
-					<a href="#" class="btn btn-sm btn-primary">Edit</a>
-					<a href="#" class="btn btn-sm btn-danger">Delete</a>
-				
-				</td>
-				
-				
-		    </tr>
+    		
+    	<%
+    	}
+		%>
+		  
+	
+		    
+		    
+		    
 		  </tbody>
 		</table>
 		
