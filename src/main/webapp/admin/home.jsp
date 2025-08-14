@@ -76,6 +76,11 @@ a:hover{
  			</div>
  		</div>
 	</div>
+	
+	
+		<div style="margin-top: 280px">
+			<%@include file="footer.jsp" %>
+		</div>
 
 </body>
 </html>
