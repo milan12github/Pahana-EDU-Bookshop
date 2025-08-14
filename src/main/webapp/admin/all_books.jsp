@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin: Add Books</title>
-<%@include file="allCss.jsp" %>
+<title>Insert title here</title>
 </head>
 <body>
-<%@include file="navbar.jsp" %>
 
 </body>
 </html>

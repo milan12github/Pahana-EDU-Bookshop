@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +28,7 @@ a:hover{
  		<div class="row p-5">
  			<div class="col-md-3">
  				<a href="add_books.jsp">
- 				<div class="card">
+ 				<div class = "card">
  					<div class="card-body text-center">
 						<i class="fa-solid fa-circle-plus fa-3x text-primary"></i><br>
 						<h4>Add Books</h4>
@@ -41,6 +40,7 @@ a:hover{
  			
  			
  			<div class="col-md-3">
+ 				<a href="all_books.jsp">
  				<div class="card">
  					<div class="card-body text-center">
 						<i class="fa-solid fa-book fa-3x text-danger"></i><br>
@@ -48,10 +48,12 @@ a:hover{
 						------------------
  					</div>
  				</div>
+ 				</a>
  			</div>
  			
  			
  			<div class="col-md-3">
+ 				<a href="orders.jsp">
  				<div class="card">
  					<div class="card-body text-center">
 						<i class="fa-solid fa-box-open fa-3x text-warning"></i><br>
@@ -59,6 +61,7 @@ a:hover{
 						------------------
  					</div>
  				</div>
+ 				</a>
  			</div>
  			
  			
