@@ -15,7 +15,7 @@
 <body>
 	<%@include file="navbar.jsp" %>
 	
-	<h3 class="ext-center">Hello Admin</h3>
+	<h3 class="text-center">Hello Admin</h3>
 	
 	<table class="table table-striped">
 		  <thead class="bg-primary text-white">
@@ -48,7 +48,7 @@
 		      <td><%=b.getStatus() %></td>
 
 				<td>
-					<a href="#" class="btn btn-sm btn-primary">Edit</a>
+					<a href="edit_books.jsp?id=<%=b.getBookId()%>" class="btn btn-sm btn-primary">Edit</a>
 					<a href="#" class="btn btn-sm btn-danger">Delete</a>
 				
 				</td>

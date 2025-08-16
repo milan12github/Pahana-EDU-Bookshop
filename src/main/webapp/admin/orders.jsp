@@ -10,7 +10,7 @@
 <body>
 	<%@include file="navbar.jsp" %>
 	
-	<h3 class="ext-center">Hello Admin</h3>
+	<h3 class="text-center">Hello Admin</h3>
 	
 	<table class="table table-striped">
 		  <thead class="bg-primary text-white">
