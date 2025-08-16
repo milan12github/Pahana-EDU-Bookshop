@@ -12,6 +12,10 @@
 <body style="background-color: #f0f2f2;">
 	<%@include file="navbar.jsp" %>
 	
+	<c:if test="${empty userobj}">
+		<c:redirect url="../login.jsp"></c:redirect>
+	</c:if>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
@@ -22,13 +26,13 @@
 
 
 						<c:if test="${not empty succMsg }">
-							<p class="text-center text-success">${succMsg }</p>
+							<h5 class="text-center text-success">${succMsg }</h5>
 							<c:remove var="succMsg" scope="session"></c:remove>
 						</c:if>
 						
 						
 						<c:if test="${not empty failedMsg }">
-							<p class="text-center text-danger">${failedMsg }</p>
+							<h5 class="text-center text-danger">${failedMsg }</h5>
 							<c:remove var="failedMsg" scope="session"></c:remove>
 						</c:if>
 						
