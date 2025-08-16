@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.DAO.BookDAOImpl" %>
+<%@ page import="com.entity.BookDtls" %>
+<%@ page import="com.DB.DBConnect" %>
 
 <!DOCTYPE html>
 <html>
@@ -131,89 +135,42 @@
 
 <!--Start New Book-->
 
-       <div class="container" style="background-color: #f7f7f7;">
-        <h3 class="text-center mt-5">New Book</h3>
+       <div class="container">
+        <h3 class="text-center">New Book</h3>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card crd-ho">
+       
+        
+       	<%
+    	BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
+       	List<BookDtls> list = dao.getNewBook();
+       	for (BookDtls b : list){
+       	%>
+    	<div class="col-md-3">
+    	   <div class="card crd-ho">
                     <div class="card-body text-center">
-                        <img alt="" src="book/java.png" style="width: 150px; height: 200px" class="img-thumblin">
-                        <p>Java Programming</p>
-                        <p>Balguruswamy</p>
-                        <p>Categories: New</p>
+                        <img alt="" src="book/<%=b.getPhotoName() %>" style="width: 150px; height: 200px" class="img-thumblin">
+                        <p><%=b.getBookname() %></p>
+                        <p><%=b.getAuthor() %></p>
+                        <p>
+                        Categories:<%=b.getBookCategory()%>
+                        </p>
 
-                        <div class="row text-center">
-                            <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i> Add cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-2">View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-2">299</a>
+                        <div class="row">
+                            <a href="" class="btn btn-danger btn-sm-2">Add cart</a>
+                            <a href="" class="btn btn-success btn-sm ml-1">View Details</a>
+                            <a href="" class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%></a>
                         </div>
 
                     </div>
                 </div>
-            </div>
-
-
-
-             <div class="col-md-3">
-                            <div class="card crd-ho">
-                                <div class="card-body text-center">
-                                    <img alt="" src="book/java.png" style="width: 150px; height: 200px" class="img-thumblin">
-                                    <p>Java Programming</p>
-                                    <p>Balguruswamy</p>
-                                    <p>Categories: New</p>
-
-                                    <div class="row text-center">
-                                        <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i> Add cart</a>
-                                        <a href="" class="btn btn-success btn-sm ml-2">View Details</a>
-                                        <a href="" class="btn btn-danger btn-sm ml-2">299</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                         <div class="col-md-3">
-                                        <div class="card crd-ho">
-                                            <div class="card-body text-center">
-                                                <img alt="" src="book/java.png" style="width: 150px; height: 200px" class="img-thumblin">
-                                                <p>Java Programming</p>
-                                                <p>Balguruswamy</p>
-                                                <p>Categories: New</p>
-
-                                                <div class="row text-center">
-                                                    <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i> Add cart</a>
-                                                    <a href="" class="btn btn-success btn-sm ml-2">View Details</a>
-                                                    <a href="" class="btn btn-danger btn-sm ml-2">299</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                     <div class="col-md-3">
-                                                    <div class="card crd-ho">
-                                                        <div class="card-body text-center">
-                                                            <img alt="" src="book/java.png" style="width: 150px; height: 200px" class="img-thumblin">
-                                                            <p>Java Programming</p>
-                                                            <p>Balguruswamy</p>
-                                                            <p>Categories: New</p>
-
-                                                            <div class="row text-center">
-                                                                <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i> Add cart</a>
-                                                                <a href="" class="btn btn-success btn-sm ml-2">View Details</a>
-                                                                <a href="" class="btn btn-danger btn-sm ml-2">299</a>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-        </div>
-
-        <div class="text-center mt-3">
+                </div>
+        	
+                <%
+    			}
+                %>
+ 
+      </div>                                                        
+     <div class="text-center mt-3">
             <a href="" class="btn btn-danger btn-sm text-white">View All</a>
         </div>
 
