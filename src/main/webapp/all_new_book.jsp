@@ -101,8 +101,8 @@ to {
        	List<BookDtls> list = dao.getAllNewBook();
        	for (BookDtls b : list){
        	%>
-    	<div class="col-md-5">
-    	   <div class="card mt-5">
+    	<div class="col-md-3">
+    	   <div class="card crd-ho">
                     <div class="card-body text-center">
                         <img alt="" src="book/<%=b.getPhotoName() %>" style="width: 120px; height: 180px" class="img-thumblin">
                         <p><%=b.getBookname() %></p>
