@@ -94,6 +94,31 @@
 							    </div>
 							  </div>
 							  
+							  
+							   <div class="form-row">
+							    <div class="form-group col-md-6">
+							      <label for="inputEmail4">State</label>
+							      <input type="text" class="form-control" id="inputEmail4">
+							    </div>
+							    <div class="form-group col-md-6">
+							      <label for="inputPassword4">Pin code</label>
+							      <input type="text" class="form-control" id="inputPassword4">
+							    </div>
+							  </div>
+							  
+							  <div class="form-group">
+							  	<label>Payment Mode</label>
+							  	<select class="form-control">
+							  		<option>--Select--</option>
+							  		<option>Cash On Delevery</option>
+							  	</select>
+							  </div>
+							  
+							  <div class="text-center">
+							  	<button class="btn btn-warning">Order Now</button>
+							  	<a href="index.jsp" class="btn btn-success">Continue Shopping</a>
+							  </div>
+							  
 						  
 						  
 						  
