@@ -37,8 +37,8 @@
  				<%
  				if("Old".equals(b.getBookCategory())){
  				%>
- 				<h5>Contact To Seller</h5>
- 				<h5><i class="fa-solid fa-envelope"></i>
+ 				<h5 class="text-primary">Contact To Seller</h5>
+ 				<h5 class="text-primary"><i class="fa-solid fa-envelope"></i>
  				Email: <%=b.getEmail() %></h5>
  				<%	
  				}
@@ -59,15 +59,31 @@
 	 						<p>Free Shipping</p>
  						</div> 
  						
- 						<div class=" text-center p-3">
-	 						<a href="" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i>
-	 						Add Card</a>
-	 						<a href="" class="btn btn-danger"><i class="fa-solid fa-rupee-sign"></i>
-	 						299</a>
+ 						</div> 
  						
- 						</div>
- 						
- 					</div>
+ 							<%
+			 				if("Old".equals(b.getBookCategory())){
+			 				%>
+			 				<div class=" text-center p-3">
+		 						<a href="index.jsp" class="btn btn-success"><i class="fa-solid fa-cart-plus"></i>
+		 						Continue Shopping</a>
+		 						<a href="" class="btn btn-danger"><i class="fa-solid fa-rupee-sign"></i>
+		 						299</a>
+	 						</div>
+			 				
+			 				<%	
+			 				} else {
+			 				%>
+			 				<div class=" text-center p-3">
+		 						<a href="" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i>
+		 						Add Card</a>
+		 						<a href="" class="btn btn-danger"><i class="fa-solid fa-rupee-sign"></i>
+		 						299</a>
+ 							</div>
+			 				<%
+			 				}
+			 				%>
+ 
  				</div>
  			</div>
  		</div>

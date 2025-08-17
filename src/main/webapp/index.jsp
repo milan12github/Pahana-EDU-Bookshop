@@ -4,6 +4,7 @@
 <%@ page import="com.DAO.BookDAOImpl" %>
 <%@ page import="com.entity.BookDtls" %>
 <%@ page import="com.DB.DBConnect" %>
+<%@ page import="com.entity.User" %>
 
 <!DOCTYPE html>
 <html>
@@ -28,8 +29,11 @@
 </style>
 
 </head>
-<body>
+<body style="background-color: #fcf7f7;">	
 
+	<% 
+	User u=(User)session.getAttribute("userobj");
+	%>
 	 <%@ include file="all_component/navbar.jsp" %>
 	 
 	 <div class="container-fluid back-img">
@@ -132,7 +136,19 @@
                         </p>
 
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm-2">Add cart</a>
+                        
+                        <% 
+                        if(u==null)
+                        {%>
+                        <a href="login.jsp" class="btn btn-danger btn-sm-2">Add Cart</a>	
+                        <%
+                        }else{
+                        %>
+                        <a href="cartServlet" class="btn btn-danger btn-sm-2">Add Cart</a>	
+                        <% 
+                        }
+                        %>
+                            
                             <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-1">View Details</a>
                             
                             <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-rupee-sign"></i>
