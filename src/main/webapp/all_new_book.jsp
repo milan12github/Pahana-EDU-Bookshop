@@ -101,8 +101,8 @@ to {
        	List<BookDtls> list = dao.getAllNewBook();
        	for (BookDtls b : list){
        	%>
-    	<div class="col-md-3">
-    	   <div class="card crd-ho">
+    	<div class="col-md-5">
+    	   <div class="card mt-5">
                     <div class="card-body text-center">
                         <img alt="" src="book/<%=b.getPhotoName() %>" style="width: 120px; height: 180px" class="img-thumblin">
                         <p><%=b.getBookname() %></p>
@@ -116,19 +116,19 @@ to {
                        	<% 
                         if(u==null)
                         {%>
-                        <a href="login.jsp" class="btn btn-danger btn-sm-2">Add Cart</a>	
+                        <a href="login.jsp" class="btn btn-danger btn-sm-3">Add Cart</a>	
                         <%
                         }else{
                         %>
-                        <a href="cart?bid=<%=b.getBookId()%> &&uid=<%=u.getId() %>" class="btn btn-danger btn-sm-2">Add Cart</a>	
+                        <a href="cart?bid=<%=b.getBookId()%> &&uid=<%=u.getId() %>" class="btn btn-danger btn-sm-3">Add Cart</a>	
                         <% 
                         }
                         %>
                         
                             
-                            <a href="" class="btn btn-success btn-sm ml-1">View Details</a>
+                            <a href="" class="btn btn-success btn-sm ml-3">View Details</a>
                             
-                            <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-rupee-sign"></i>
+                            <a href="" class="btn btn-danger btn-sm ml-3"><i class="fa-solid fa-rupee-sign"></i>
                             <%=b.getPrice()%>
                      
                             </a>
