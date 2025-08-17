@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>All New Book</title>
+<title>All Old Book</title>
 <%@include file="all_component/allCss.jsp" %>
 
 <style type="text/css">

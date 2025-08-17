@@ -67,7 +67,7 @@
                         {%>
                         Categories: <%=b.getBookCategory() %>
                          <div class="row">
-                          
+
                             <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-2">View Details</a>
                             <a href="" class="btn btn-danger btn-sm ml-2"><i class="fa-solid fa-rupee-sign"></i>
                             <%=b.getPrice() %></a>
@@ -79,7 +79,19 @@
                         Categories: <%=b.getBookCategory() %></p>
 
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i> Add cart</a>
+
+	                        <% 
+	                        if(u==null)
+	                        {%>
+	                        <a href="login.jsp" class="btn btn-danger btn-sm-2">Add Cart</a>	
+	                        <%
+	                        }else{
+	                        %>
+	                        <a href="cart?bid=<%=b.getBookId()%> &&uid=<%=u.getId() %>" class="btn btn-danger btn-sm-2">Add Cart</a>	
+	                        <% 
+	                        }
+	                        %>
+ 
                             <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm">View Details</a>
                             <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-rupee-sign"></i>
                             <%=b.getPrice() %></a>
@@ -144,7 +156,7 @@
                         <%
                         }else{
                         %>
-                        <a href="cartServlet" class="btn btn-danger btn-sm-2">Add Cart</a>	
+                        <a href="cart?bid=<%=b.getBookId()%> &&uid=<%=u.getId() %>" class="btn btn-danger btn-sm-2">Add Cart</a>	
                         <% 
                         }
                         %>
