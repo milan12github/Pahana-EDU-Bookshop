@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <div class="container-fluid" style="height: 15px; background-color: #303f9f"></div>
 
 <div class="container-fluid p-4 bg-light">
@@ -12,10 +14,36 @@
         </form>
 </div>
 
-    <div class="col-md-3">
-    <a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-    <a href="register.jsp" class="btn btn-primary text-white"><i class="fa-solid fa-user-plus"></i> Register</a>
-    </div>
+
+		<c:if test="${not empty userobj}">
+			
+			<div class="col-md-3">
+
+			<a href="cart.jsp">
+
+			<i class="fa-solid fa-cart-plus fa-2x mt-2"></i>
+			
+			</a>
+			
+		    <a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-user-plus"></i>${userobj.name}</a>
+		    <a href="" class="btn btn-primary text-white"><i class="fa-solid fa-right-to-bracket"></i> Logout</a>
+		    </div>
+		
+		</c:if>
+		
+		<c:if test="${empty userobj }">
+			
+			<div class="col-md-3">
+		    <a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+		    <a href="register.jsp" class="btn btn-primary text-white"><i class="fa-solid fa-user-plus"></i> Register</a>
+		    </div>
+	    
+		</c:if>
+			
+		
+		
+		
+		
 
 </div>
 </div>
