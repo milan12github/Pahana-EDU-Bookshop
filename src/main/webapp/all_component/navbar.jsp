@@ -19,13 +19,13 @@
 			
 			<div class="col-md-3">
 
-			<a href="cart.jsp">
+			<a href="checkout.jsp">
 
 			<i class="fa-solid fa-cart-plus fa-2x mt-2"></i>
 			
 			</a>
 			
-		    <a href="checkout.jsp" class="btn btn-success"><i class="fa-solid fa-user-plus"></i>${userobj.name}</a>
+		    <a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-user-plus"></i>${userobj.name}</a>
 		    <a href="logout" class="btn btn-primary text-white"><i class="fa-solid fa-right-to-bracket"></i> Logout</a>
 		    </div>
 		

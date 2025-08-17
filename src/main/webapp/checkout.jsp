@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CheckOut Page</title>
+<title>Cart Page</title>
 <%@ include file="all_component/allCss.jsp" %>
 </head>
 <body style="background-color: #f0f1f2;">
@@ -58,6 +58,7 @@
 								  
 								  <%
 								  	User u = (User)session.getAttribute("userobj");
+								  
 								    CartDAOImpl dao = new CartDAOImpl(DBConnect.getConn());
 								    List<Cart> cart = dao.getBookByUser(u.getId());
 								    Double totalPrice=0.00;
@@ -105,11 +106,11 @@
 	            			<div class="form-row">
 							    <div class="form-group col-md-6">
 							      <label for="inputEmail4">Name</label>
-							      <input type="text" class="form-control" id="inputEmail4" value="">
+							      <input type="text" class="form-control" id="inputEmail4" value="<%=u.getName() %>" readonly="readonly">
 							    </div>
 							    <div class="form-group col-md-6">
 							      <label for="inputPassword4">Email</label>
-							      <input type="email" class="form-control" id="inputPassword4" value="">
+							      <input type="email" class="form-control" id="inputPassword4" value="<%=u.getEmail() %>" readonly="readonly">
 							    </div>
 							  </div>
 							  
@@ -117,7 +118,7 @@
 							  <div class="form-row">
 							    <div class="form-group col-md-6">
 							      <label for="inputEmail4">Phone Number</label>
-							      <input type="number" class="form-control" id="inputEmail4">
+							      <input type="number" class="form-control" id="inputEmail4" value="<%=u.getPhone() %>">
 							    </div>
 							    <div class="form-group col-md-6">
 							      <label for="inputPassword4">Address</label>

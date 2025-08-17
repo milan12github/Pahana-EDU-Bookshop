@@ -87,6 +87,7 @@ public class CartDAOImpl implements CartDAO{
 		return list;
 	}
 
+	
 	@Override
 	public boolean deleteBook(int bid, int uid) {
 		
@@ -111,7 +112,7 @@ public class CartDAOImpl implements CartDAO{
 		} 
 		
 		
-		return false;
+		return f;
 	}
 	
 	
