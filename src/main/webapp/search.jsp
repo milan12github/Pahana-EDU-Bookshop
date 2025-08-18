@@ -4,6 +4,7 @@
 <%@ page import="com.DAO.BookDAOImpl" %>
 <%@ page import="com.entity.BookDtls" %>
 <%@ page import="com.DB.DBConnect" %>
+<%@ page import="com.entity.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,11 @@
 
 </head>
 <body>
+
+	<% 
+	User u=(User)session.getAttribute("userobj");
+	%>
+	
  <%@ include file="all_component/navbar.jsp" %>
  
   	<div class="container-fluid">
@@ -47,7 +53,7 @@
                         Categories: <%=b.getBookCategory() %>
                          <div class="row">
                           
-                            <a href="" class="btn btn-success btn-sm ml-2">View Details</a>
+                            <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-2">View Details</a>
                             <a href="" class="btn btn-danger btn-sm ml-2"><i class="fa-solid fa-rupee-sign"></i>
                             <%=b.getPrice() %></a>
                         </div>
@@ -58,8 +64,20 @@
                         Categories: <%=b.getBookCategory() %></p>
 
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-cart-plus"></i> Add cart</a>
-                            <a href="" class="btn btn-success btn-sm">View Details</a>
+                        
+                        	<% 
+	                        if(u==null)
+	                        {%>
+	                        <a href="login.jsp" class="btn btn-danger btn-sm-2">Add Cart</a>	
+	                        <%
+	                        }else{
+	                        %>
+	                        <a href="cart?bid=<%=b.getBookId()%> &&uid=<%=u.getId() %>" class="btn btn-danger btn-sm-2">Add Cart</a>	
+	                        <% 
+	                        }
+	                        %>
+
+                            <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm">View Details</a>
                             <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-rupee-sign"></i>
                             <%=b.getPrice() %></a>
                         </div>
