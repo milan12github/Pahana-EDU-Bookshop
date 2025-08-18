@@ -6,13 +6,11 @@ public class Book_Order {
 	private String orderId;
 	private String userName;
 	private String email;
-	private String phone;
 	private String fulladd;
-	
+	private String phone;
 	private String bookName;
 	private String author;
 	private String price;
-	
 	private String paymentType;
 	
 	public Book_Order() {
