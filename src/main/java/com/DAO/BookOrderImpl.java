@@ -71,6 +71,7 @@ public class BookOrderImpl implements BookOrderDAO{
 			
 			String sql="select * from book_order where email=?";
 			PreparedStatement ps=conn.prepareStatement(sql);
+			ps.setString(1, email);
 			ResultSet rs=ps.executeQuery();
 			
 			while(rs.next())
@@ -86,6 +87,7 @@ public class BookOrderImpl implements BookOrderDAO{
 				o.setAuthor(rs.getString(8));
 				o.setPrice(rs.getString(9));
 				o.setPaymentType(rs.getString(10));
+				list.add(o);
 			}
 			
 			
