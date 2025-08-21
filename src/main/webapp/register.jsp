@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page isELIgnored="false" %>
+<%@ page isELIgnored="false" %>
 
 <html>
 <head>
@@ -55,7 +55,7 @@
 
                           <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" name="check" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Agree terms & Condition</label>
+                            <label class="form-check-label" for="exampleCheck1">Agree terms and Condition</label>
                           </div>
 
                           <button type="submit" class="btn btn-primary">Register</button>

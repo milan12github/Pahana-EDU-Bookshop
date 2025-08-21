@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
                 us.setName("Admin");
                 session.setAttribute("userobj", us);
                 resp.sendRedirect("admin/home.jsp");
-                return; // ✅ stop further processing
+                return;
             }
 
             // Normal user login
@@ -39,11 +39,11 @@ public class LoginServlet extends HttpServlet {
             if (us != null) {
                 session.setAttribute("userobj", us);
                 resp.sendRedirect("index.jsp");
-                return; // ✅ stop further processing
+                return; 
             } else {
                 session.setAttribute("failedMsg", "Email & Password Invalid");
                 resp.sendRedirect("login.jsp");
-                return; // ✅ stop further processing
+                return; 
             }
 
         } catch (Exception e) {
